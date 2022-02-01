@@ -1,0 +1,25 @@
+nav{
+    background:#000;
+    color:#fff;
+    height:70px;
+    padding:0 10px;
+}
+
+nav ul{
+    list-style-type: none;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.link{
+    text-decoration:none;
+    color:#fff;
+    margin: 0 10px;
+    transition:all ease 0.2s;
+}
+
+
+.link:hover{
+    color: #cc0077;
+}
