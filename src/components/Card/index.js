@@ -9,10 +9,10 @@ import logoNivel4 from "../../assets/nvl4.png";
 import logoNivel5 from "../../assets/nvl5.png";
 
 
-function Card ({power, adicionar, adicionarPoder}){
-    //console.log(power.disciplina);
+function Card ({poderes, adicionar, adicionarPoder}){
+    //console.log(poderes.disciplina);
     let logo = "";
-    switch(power.disciplina){
+    switch(poderes.disciplina){
         case "animalismo": 
             logo = logoAnimalism;
             break;
@@ -29,7 +29,7 @@ function Card ({power, adicionar, adicionarPoder}){
 
 
     let level = "";
-    switch(power.nivel){
+    switch(poderes.nivel){
         case '1': level = logoNivel1;
         break;
         case '2': level = logoNivel2;
@@ -47,21 +47,21 @@ function Card ({power, adicionar, adicionarPoder}){
         
         <div className={styles.column}>
             <div className={styles.card}>
-            <input type="checkbox" className={styles.toggle} name={"checkbox"+power.id} id={"checkbox"+power.id}/>
-            <label htmlFor={"checkbox"+power.id} className={styles.lbl_toggle}>
+            <input type="checkbox" className={styles.toggle} name={"checkbox"+poderes.id} id={"checkbox"+poderes.id}/>
+            <label htmlFor={"checkbox"+poderes.id} className={styles.lbl_toggle}>
                 <div className={styles.header}>
-                    <div className={styles.logo}><img src={logo} alt={power.disciplina}/></div>    
-                    <div className={styles.title}>{power.poder}</div>    
-                    <div className={styles.level}><img src={level} alt={power.nivel}/></div>    
+                    <div className={styles.logo}><img src={logo} alt={poderes.disciplina}/></div>    
+                    <div className={styles.title}>{poderes.poder}</div>    
+                    <div className={styles.level}><img src={level} alt={poderes.nivel}/></div>    
                 </div>
                 </label>
            
                 <div className={styles.content}>
-                    <div className={styles.description}><h3>Descrição:</h3>{power.descricao}</div>
-                    <div className={styles.cost}><h3>Custo:</h3>{power.custo}</div>
-                    <div className={styles.process}><h3>Parada:</h3>{power.parada}</div>
-                    <div className={styles.system}><h3>Sistema:</h3>{power.sistema}</div>
-                    <div className={styles.duration}><h3>Duração:</h3>{power.duracao}</div>
+                    <div className={styles.description}><h3>Descrição:</h3>{poderes.descricao}</div>
+                    <div className={styles.cost}><h3>Custo:</h3>{poderes.custo}</div>
+                    <div className={styles.process}><h3>Parada:</h3>{poderes.parada}</div>
+                    <div className={styles.system}><h3>Sistema:</h3>{poderes.sistema}</div>
+                    <div className={styles.duration}><h3>Duração:</h3>{poderes.duracao}</div>
                 </div>
                 <div className={styles.footer}>
                     {adicionar && (<button onClick={adicionarPoder}>Adicionar</button>)}

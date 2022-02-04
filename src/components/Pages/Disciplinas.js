@@ -1,10 +1,10 @@
 import CardList from "../CardList"
 import styles from "./Disciplinas.module.css"
 
-function Disciplinas({setMinhasDisciplinas, disciplinas, customDisciplina}){
+function Disciplinas({poderes}){
     //let animalismo = disciplinas.filter(disciplina=>disciplinas.disciplina === "animalismo");
-    let animalismo = disciplinas.filter(poder=>poder.disciplina === "animalismo");
-    let auspicios = disciplinas.filter(poder=>poder.disciplina === "auspícios");
+    let animalismo = poderes.filter(poder=>poder.disciplina === "animalismo");
+    let auspicios = poderes.filter(poder=>poder.disciplina === "auspícios");
     //let animalismo = disciplinas.filter(poder=>poder.disciplina === "animalismo");
     //let animalismo = disciplinas.filter(poder=>poder.disciplina === "animalismo");
   
@@ -15,13 +15,13 @@ function Disciplinas({setMinhasDisciplinas, disciplinas, customDisciplina}){
                 <div className={styles.title}>
                     <h1>Animalismo</h1>
                 </div>
-                <CardList powers={animalismo} adicionar={true}/>
+                <CardList poderes={animalismo}/>
             </div>
             <div className={styles.disciplinas}>
                 <div className={styles.title}>
                     <h1>Auspícios</h1>
                 </div>
-                <CardList powers={auspicios} adicionar={true}/>
+                <CardList poderes={auspicios}/>
             </div>
         </div>
     )
