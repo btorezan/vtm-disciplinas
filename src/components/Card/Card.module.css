@@ -64,6 +64,23 @@
 }
 
 
+.footer{
+    display:flex;
+    padding:5px;
+    justify-content: flex-end;
+}
+
+.footer button{
+    background-color: green;
+    color:#fff;
+    cursor:pointer;
+    padding:5px;
+    border:none;
+    border-radius: 5px;
+    width: 110px;
+
+}
+
 @media screen and (max-width: 900px) {
     .column {
       width: 50%;

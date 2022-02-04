@@ -9,7 +9,7 @@ import logoNivel4 from "../../assets/nvl4.png";
 import logoNivel5 from "../../assets/nvl5.png";
 
 
-function Card ({power}){
+function Card ({power, adicionar, adicionarPoder}){
     //console.log(power.disciplina);
     let logo = "";
     switch(power.disciplina){
@@ -43,8 +43,6 @@ function Card ({power}){
         default: level = '';
         
     }
-
-
     return (
         
         <div className={styles.column}>
@@ -66,7 +64,7 @@ function Card ({power}){
                     <div className={styles.duration}><h3>Duração:</h3>{power.duracao}</div>
                 </div>
                 <div className={styles.footer}>
-                    <div className={styles.references}>{power.nome}</div>
+                    {adicionar && (<button onClick={adicionarPoder}>Adicionar</button>)}
                 </div>
             </div>
         </div>

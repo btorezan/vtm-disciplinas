@@ -1,9 +1,19 @@
 import CardList from "../../components/CardList"
+import {useState} from "react"
 
 function Home({disciplinas}){
+    function adicionarPoder(){
+        console.log("funciona")
+    }
+
+
+    const [meusPoderes, setMeusPoderes] = useState();
+
+
     return (
         <div>
-            <CardList powers={disciplinas}/>
+            <h1>Minhas Disciplinas</h1>
+            <CardList powers={disciplinas} adicionarPoder={adicionarPoder}/>
         </div>
     )
 }

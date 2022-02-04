@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import NavigationBar from './components/NavigationBar';
@@ -53,13 +54,15 @@ function App() {
             },
   ];
 
+  const [minhasDisciplinas, setMinhasDisciplinas] = useState(0);
+
   return (
     <div className="App">
       <Router>
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<Home disciplinas={disciplinas}/>}></Route>
-          <Route path="/disciplinas" element={<Disciplinas disciplinas={disciplinas}/>}></Route>
+          <Route path="/" element={<Home disciplinas={minhasDisciplinas}/>}></Route>
+          <Route path="/disciplinas" element={<Disciplinas disciplinas={disciplinas} setMinhasDisciplinas = {setMinhasDisciplinas}/>}></Route>
         </Routes>
         <Footer />
       </Router>
