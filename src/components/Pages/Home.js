@@ -1,10 +1,19 @@
 import CardList from "../../components/CardList"
+import styles from "./Home.module.css"
 
-function Home({disciplinas}){
+function Home({poderes, botaoAdicionar, botaoRemover, removerPoder}){
+
+    let meusPoderes = poderes;
+    //console.log(poderes);
+
+    function  handleRemoverPoder(poder){
+        removerPoder(poder);
+    }
+
     return (
-        <div>
+        <div className={styles.conteiner}>
             <h1>Minhas Disciplinas</h1>
-            <CardList powers={disciplinas}/>
+            {poderes && (<CardList poderes={meusPoderes}  botaoAdicionar = {botaoAdicionar} botaoRemover = {botaoRemover} handleRemoverPoder ={handleRemoverPoder}/>)}
         </div>
     )
 }
