@@ -4,10 +4,11 @@ import NavigationBar from './components/NavigationBar';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/Pages/Home';
 import Disciplinas from './components/Pages/Disciplinas';
+import {useState} from 'react';
 
 function App() {
 
-  const todosPoderes =  [   
+const todosPoderes =  [   
     {
       id:1,  
       disciplina:'animalismo',
@@ -54,33 +55,38 @@ function App() {
     },
   ];
 
-let meusPoderes = [];
+const [meusPoderes, setMeusPoderes] = useState([])
+
 
 function adicionarPoder(novoPoder){
-  let contador = 0
+  let arr = meusPoderes;
+  let contador = 0;
+
   if(meusPoderes.length > 0){
-    meusPoderes.map((poder, key)=>{if(novoPoder.id === poder.id){contador ++; }})
-    if(contador === 0){
-      meusPoderes.push(novoPoder) 
-      alert("Poder " +novoPoder.poder+ " adicionado com sucesso")
-      contador = 0;
+     meusPoderes.map((poder, key) => {if(novoPoder.id === poder.id){contador ++; }})
+     if(contador === 0){
+      arr.push(novoPoder)
+      alert("Poder "+ novoPoder.poder + " adicionado com sucesso")
+     contador = 0;
     }else{
-      alert("Poder " +novoPoder.poder+ " já adicionado anteriormente")
+      alert("Poder " + novoPoder.poder + " já adicionado anteriormente")
     }
   }else{
-    meusPoderes.push(novoPoder) 
-    alert("Poder " +novoPoder.poder+ " adicionado com sucesso")
+    arr.push(novoPoder)
+    alert("Poder " + novoPoder.poder+ " adicionado com sucesso")
   }
+  setMeusPoderes(arr);
 }
 
 function removerPoder(poder){
-  console.log("remover Poder"+poder.poder)
+
+  setMeusPoderes(meusPoderes.filter(p => p.id !== poder.id));
+
 }
 
-
- return (
+return (
     <div className="App">
-      <Router>
+     <Router>
         <NavigationBar />
         <Routes>
           <Route path="/" element={<Home poderes={meusPoderes} removerPoder = {removerPoder} botaoAdicionar={false} botaoRemover = {true}/>}></Route>
@@ -89,7 +95,6 @@ function removerPoder(poder){
         <Footer />
       </Router>
     </div>
-  
   );
 }
 

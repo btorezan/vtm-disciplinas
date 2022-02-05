@@ -71,14 +71,20 @@
 }
 
 .footer button{
-    background-color: green;
     color:#fff;
     cursor:pointer;
     padding:5px;
     border:none;
     border-radius: 5px;
     width: 110px;
+}
 
+.btn_add{
+    background-color: green;
+}
+
+.btn_remove{
+    background-color: red;
 }
 
 @media screen and (max-width: 900px) {

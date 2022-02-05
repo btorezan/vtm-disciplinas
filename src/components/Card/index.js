@@ -75,8 +75,8 @@ function Card ({poder, adicionarPoder, botaoAdicionar, removerPoder, botaoRemove
                     <div className={styles.duration}><h3>Duração:</h3>{poder.duracao}</div>
                 </div>
                 <div className={styles.footer}>
-                    {botaoAdicionar && (<button onClick={add}>Adicionar</button>)}
-                    {botaoRemover && (<button onClick={remove}>Remover</button>)}
+                    {botaoAdicionar && (<button className={styles.btn_add} onClick={add}>Adicionar</button>)}
+                    {botaoRemover && (<button className={styles.btn_remove  } onClick={remove}>Remover</button>)}
                 </div>
             </div>
         </div>
