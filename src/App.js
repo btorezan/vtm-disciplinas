@@ -85,9 +85,16 @@ function adicionarPoder(novoPoder){
 }
 
 function removerPoder(poder){
-  let arr = meusPoderes.filter(p => p.id !== poder.id)
-  localStorage.setItem("poderes", JSON.stringify(arr));
-  setMeusPoderes(arr);
+
+  let res = window.confirm("Deseja Excluir "+poder.poder +" da sua lista de poderes?");
+
+  if(res===true){
+    let arr = meusPoderes.filter(p => p.id !== poder.id)
+    localStorage.setItem("poderes", JSON.stringify(arr));
+    setMeusPoderes(arr);
+    alert("Poder removido com sucesso");
+  }
+
 }
 
 useEffect(()=>{
