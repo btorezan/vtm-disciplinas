@@ -4,7 +4,7 @@ import NavigationBar from './components/NavigationBar';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/Pages/Home';
 import Disciplinas from './components/Pages/Disciplinas';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 function App() {
 
@@ -55,14 +55,15 @@ const todosPoderes =  [
     },
   ];
 
-const [meusPoderes, setMeusPoderes] = useState([])
-
+const [meusPoderes, setMeusPoderes] = useState(JSON.parse(localStorage.getItem("poderes")) || [])
 
 function adicionarPoder(novoPoder){
   let arr = meusPoderes;
   let contador = 0;
+  console.log(arr)
 
-  if(meusPoderes.length > 0){
+
+  if(meusPoderes !== null){
      meusPoderes.map((poder, key) => {if(novoPoder.id === poder.id){contador ++; }})
      if(contador === 0){
       arr.push(novoPoder)
@@ -75,14 +76,25 @@ function adicionarPoder(novoPoder){
     arr.push(novoPoder)
     alert("Poder " + novoPoder.poder+ " adicionado com sucesso")
   }
+
+
+
+  localStorage.setItem("poderes", JSON.stringify(arr));
+  console.log("Adicionado")
   setMeusPoderes(arr);
 }
 
 function removerPoder(poder){
-
-  setMeusPoderes(meusPoderes.filter(p => p.id !== poder.id));
-
+  let arr = meusPoderes.filter(p => p.id !== poder.id)
+  localStorage.setItem("poderes", JSON.stringify(arr));
+  setMeusPoderes(arr);
 }
+
+useEffect(()=>{
+  let arr = JSON.parse(localStorage.getItem("poderes"));
+  console.log(arr)
+  setMeusPoderes(arr)
+},[]);
 
 return (
     <div className="App">
