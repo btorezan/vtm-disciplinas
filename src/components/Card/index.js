@@ -1,7 +1,16 @@
 import styles from "./Card.module.css"
-import logoAnimalism from "../../assets/animalism.png";
-import logoAuspex from "../../assets/auspex.png";
-import logoCelerity from "../../assets/celerity.png";
+import logoAnimalismo from "../../assets/animalismo.png";
+import logoAuspicios from "../../assets/auspicios.png";
+import logoCeleridade from "../../assets/celeridade.png";
+import logoDominacao from "../../assets/dominacao.png";
+import logoFeiticaria from "../../assets/feiticaria.png";
+import logoFortitude from "../../assets/fortitude.png";
+import logoMetamorfose from "../../assets/metamorfose.png";
+import logoOfuscacao from "../../assets/ofuscacao.png";
+import logoPotencia from "../../assets/potencia.png";
+import logoPresenca from "../../assets/presenca.png";
+
+
 import logoNivel1 from "../../assets/nvl1.png";
 import logoNivel2 from "../../assets/nvl2.png";
 import logoNivel3 from "../../assets/nvl3.png";
@@ -12,14 +21,35 @@ import logoNivel5 from "../../assets/nvl5.png";
 function Card ({poder, adicionarPoder, botaoAdicionar, removerPoder, botaoRemover}){
     let logo = "";
     switch(poder.disciplina){
-        case "animalismo": 
-            logo = logoAnimalism;
+        case "Animalismo": 
+            logo = logoAnimalismo;
             break;
-        case "auspícios":
-            logo = logoAuspex;
+        case "Auspícios":
+            logo = logoAuspicios;
             break;
-        case "celeridade":
-            logo = logoCelerity;
+        case "Celeridade":
+            logo = logoCeleridade;
+            break;
+        case "Dominação":
+            logo = logoDominacao;
+            break;
+        case "Feitiçaria de Sangue":
+            logo = logoFeiticaria;
+            break;
+        case "Fortitude":
+            logo = logoFortitude;
+            break;
+        case "Metamorfose":
+            logo = logoMetamorfose;
+            break;
+        case "Ofuscação":
+            logo = logoOfuscacao;
+            break;
+        case "Potência":
+            logo = logoPotencia;
+            break;
+        case "Presença":
+            logo = logoPresenca;
             break;
         default: logo='';
             break;

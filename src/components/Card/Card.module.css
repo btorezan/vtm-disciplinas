@@ -24,9 +24,8 @@
 }
 
 .card .header .logo, .card .header .level{
-    height:70px;
-    width:70px;
-    padding:10px;
+    height:50px;
+    width:50px;
 }
 
 .card .header .logo img, .card .header .level img{
@@ -35,7 +34,7 @@
 }
 
 .card .header .title{
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-transform: uppercase;
     font-weight: bold;
     color:#cc0077;
