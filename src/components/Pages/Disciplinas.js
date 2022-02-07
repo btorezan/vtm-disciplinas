@@ -2,7 +2,6 @@ import CardList from "../CardList"
 import styles from "./Disciplinas.module.css"
 
 function Disciplinas({poderes, adicionarPoder, botaoAdicionar, removerPoder, botaoRemover}){    
-    console.log(poderes)
     
     let animalismo = poderes.filter(poder=>poder.disciplina === "Animalismo");
     let auspicios = poderes.filter(poder=>poder.disciplina === "Auspícios");
@@ -15,18 +14,7 @@ function Disciplinas({poderes, adicionarPoder, botaoAdicionar, removerPoder, bot
     let metamorfose = poderes.filter(poder=>poder.disciplina === "Metamorfose");
     let feiticaria = poderes.filter(poder=>poder.disciplina === "Feitiçaria de Sangue");
    
-   
-   
-    /**
-    * Dominação
-    Ofuscação
-    Fortitude
-    Potência
-    Presença
-    Metamorfose
-    Feitiçaria de Sangue
-    */
-    
+      
     function  handleAdicionarPoder(poder){
         adicionarPoder(poder);
     }
