@@ -934,9 +934,6 @@ const [meusPoderes, setMeusPoderes] = useState(JSON.parse(localStorage.getItem("
 function adicionarPoder(novoPoder){
   let arr = meusPoderes;
   let contador = 0;
-  console.log(arr)
-
-
   if(meusPoderes !== null){
      meusPoderes.map((poder, key) => {if(novoPoder.id === poder.id){contador ++; }})
      if(contador === 0){
@@ -952,9 +949,7 @@ function adicionarPoder(novoPoder){
   }
 
 
-
   localStorage.setItem("poderes", JSON.stringify(arr));
-  console.log("Adicionado")
   setMeusPoderes(arr);
 }
 
@@ -973,13 +968,12 @@ function removerPoder(poder){
 
 useEffect(()=>{
   let arr = JSON.parse(localStorage.getItem("poderes"));
-  console.log(arr)
   setMeusPoderes(arr)
 },[]);
 
 return (
     <div className="App">
-     <Router>
+     <Router basename={process.env.PUBLIC_URL}>
         <NavigationBar />
         <Routes>
           <Route path="/" element={<Home poderes={meusPoderes} removerPoder = {removerPoder} botaoAdicionar={false} botaoRemover = {true}/>}></Route>
