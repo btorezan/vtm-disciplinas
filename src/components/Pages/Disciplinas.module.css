@@ -6,3 +6,15 @@
     padding-left:10px;
     color:#cc0077
 }
+
+.toggle{
+    display:none;
+  }
+  
+  .lbl_toggle{
+      cursor: pointer;
+  }
+  
+  .toggle:checked + .lbl_toggle + .content{
+      display:block;
+  }

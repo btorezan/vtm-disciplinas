@@ -932,9 +932,11 @@ function App() {
 const [meusPoderes, setMeusPoderes] = useState(JSON.parse(localStorage.getItem("poderes")) || [])
 
 function adicionarPoder(novoPoder){
-  let arr = meusPoderes;
+    console.log(meusPoderes)
+  let arr = [];
   let contador = 0;
   if(meusPoderes !== null){
+    arr = meusPoderes;
      meusPoderes.map((poder, key) => {if(novoPoder.id === poder.id){contador ++; }})
      if(contador === 0){
       arr.push(novoPoder)
@@ -948,7 +950,7 @@ function adicionarPoder(novoPoder){
     alert("Poder " + novoPoder.poder+ " adicionado com sucesso")
   }
 
-
+  console.log(arr)
   localStorage.setItem("poderes", JSON.stringify(arr));
   setMeusPoderes(arr);
 }
