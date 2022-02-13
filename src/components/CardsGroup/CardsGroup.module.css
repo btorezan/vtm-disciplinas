@@ -1,0 +1,50 @@
+.disciplinas {
+  padding: 5px;
+}
+
+.disciplinas .title {
+  padding: 10px 20px;
+  color: #cc0077;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefefe;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.disciplinas .title i {
+  font-size: 24px;
+  margin-left: 30px;
+
+  transition: all 0.2s ease;
+}
+
+.disciplinas .title .text {
+  display: flex;
+  align-items: center;
+}
+
+.disciplinas .title .text img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.disciplinas .content {
+  height: 0px;
+  overflow: hidden;
+}
+
+.disciplinas .toggle {
+  display: none;
+}
+
+.disciplinas .lbl_toggle {
+  cursor: pointer;
+}
+
+.disciplinas .toggle:checked + .lbl_toggle + .content {
+  height: auto;
+}

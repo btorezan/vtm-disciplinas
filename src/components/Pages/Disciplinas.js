@@ -1,5 +1,16 @@
-import CardList from "../CardList"
+import CardsGroup from "../CardsGroup";
 import styles from "./Disciplinas.module.css"
+
+import logoAnimalismo from "../../assets/animalismo.png";
+import logoAuspicios from "../../assets/auspicios.png";
+import logoCeleridade from "../../assets/celeridade.png";
+import logoDominacao from "../../assets/dominacao.png";
+import logoFeiticaria from "../../assets/feiticaria.png";
+import logoFortitude from "../../assets/fortitude.png";
+import logoMetamorfose from "../../assets/metamorfose.png";
+import logoOfuscacao from "../../assets/ofuscacao.png";
+import logoPotencia from "../../assets/potencia.png";
+import logoPresenca from "../../assets/presenca.png";
 
 function Disciplinas({poderes, adicionarPoder, botaoAdicionar, removerPoder, botaoRemover}){    
     
@@ -26,80 +37,16 @@ function Disciplinas({poderes, adicionarPoder, botaoAdicionar, removerPoder, bot
      
     return (
         <div>
-            <div className={styles.disciplinas}>
-                <input type="checkbox" className={styles.toggle} name={"checkbox"+poderes.disciplina} id={"checkbox"+poderes.disciplina}/>
-                <label htmlFor={"checkbox"+poderes.disciplina} className={styles.lbl_toggle}></label>
-                <div className={styles.title}>
-                    <h1>Animalismo</h1>
-                </div>
-                <div className="content">
-                    <CardList poderes={animalismo} handleAdicionarPoder = {handleAdicionarPoder} 
-                    botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-                </div>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Auspícios</h1>
-                </div>
-                <CardList poderes={auspicios} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Celeridade</h1>
-                </div>
-                <CardList poderes={celeridade} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Dominação</h1>
-                </div>
-                <CardList poderes={dominacao} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Ofuscação</h1>
-                </div>
-                <CardList poderes={ofuscacao} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Fortitude</h1>
-                </div>
-                <CardList poderes={fortitude} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Potência</h1>
-                </div>
-                <CardList poderes={potencia} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Presença</h1>
-                </div>
-                <CardList poderes={presenca} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Metamorfose</h1>
-                </div>
-                <CardList poderes={metamorfose} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
-            <div className={styles.disciplinas}>
-                <div className={styles.title}>
-                    <h1>Feitiçaria de Sangue</h1>
-                </div>
-                <CardList poderes={feiticaria} handleAdicionarPoder = {handleAdicionarPoder} 
-                botaoAdicionar = {botaoAdicionar} handleRemoverPoder = {handleRemoverPoder} botaoRemover = {botaoRemover}/>
-            </div>
+            <CardsGroup disciplina={animalismo} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoAnimalismo}/>
+            <CardsGroup disciplina={auspicios} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoAuspicios}/>
+            <CardsGroup disciplina={celeridade} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoCeleridade}/>
+            <CardsGroup disciplina={dominacao} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoDominacao}/>
+            <CardsGroup disciplina={fortitude} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoFortitude}/>
+            <CardsGroup disciplina={ofuscacao} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoOfuscacao}/>
+            <CardsGroup disciplina={potencia} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoPotencia}/>
+            <CardsGroup disciplina={presenca} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoPresenca}/>
+            <CardsGroup disciplina={metamorfose} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoMetamorfose}/>
+            <CardsGroup disciplina={feiticaria} handleAdicionarPoder={handleAdicionarPoder} handleRemoverPoder={handleRemoverPoder} logo={logoFeiticaria}/>
         </div>
     )
 }
